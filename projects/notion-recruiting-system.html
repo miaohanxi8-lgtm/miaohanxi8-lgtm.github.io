@@ -29,18 +29,19 @@
       </div>
     </section>
 
-    <div class="disclosure shell"><strong>事实边界</strong>这是面试方案作业形成的产品原型，尚未经过真实招聘团队长期使用；页面中的流程结果不表述为业务效率提升。AI 简历提取属于待进一步核实与完善的扩展能力，不计入已完成成果。</div>
+    <div class="disclosure shell"><strong>事实边界</strong>这是面试方案作业形成的产品原型，尚未经过真实招聘团队长期使用；页面中的候选人、公司、时间与反馈均为虚构演示数据。AI 简历提取已完成原型级演示，但未进行真实团队规模化验证，因此不表述为效率提升。</div>
 
     <div class="case-layout shell">
       <aside class="case-toc">
         <b>CASE CONTENT</b>
         <a href="#context">01 · 问题与目标</a>
         <a href="#architecture">02 · 系统架构</a>
-        <a href="#workflow">03 · 核心流程</a>
-        <a href="#views">04 · 工作台设计</a>
-        <a href="#model">05 · 数据模型</a>
-        <a href="#decisions">06 · 产品决策</a>
-        <a href="#limits">07 · 局限与迭代</a>
+        <a href="#screens">03 · 界面实证</a>
+        <a href="#workflow">04 · 核心流程</a>
+        <a href="#views">05 · 工作台设计</a>
+        <a href="#model">06 · 数据模型</a>
+        <a href="#decisions">07 · 产品决策</a>
+        <a href="#limits">08 · 局限与迭代</a>
       </aside>
 
       <article class="case-content">
@@ -73,11 +74,37 @@
           </div>
         </section>
 
+
+        <section id="screens">
+          <p class="kicker">03 · INTERFACE EVIDENCE</p>
+          <h2>真实界面，虚构数据</h2>
+          <p class="lead">界面不是为了“展示数据库”，而是把不同角色此刻需要完成的动作摆到最前面。</p>
+          <p class="demo-data-note">以下截图来自原型实际演示；候选人姓名、岗位、时间与反馈均为虚构数据。</p>
+          <div class="screen-gallery">
+            <figure class="screen-card screen-card-wide">
+              <div class="screen-frame"><img src="/assets/hr-system/hr-workbench.webp" alt="HR 招聘工作台的今日优先任务视图" loading="lazy"></div>
+              <figcaption><span>01 · HR WORKBENCH</span><strong>今日优先：从“候选人名单”变成“下一步工作队列”</strong><p>按动作与流程节点分组，HR 可以直接看到确认笔试、等待作业、等待反馈与约复试等待办。</p></figcaption>
+            </figure>
+            <figure class="screen-card">
+              <div class="screen-frame"><img src="/assets/hr-system/department-feedback.webp" alt="部门反馈中心的结构化反馈视图" loading="lazy"></div>
+              <figcaption><span>02 · DEPARTMENT INPUT</span><strong>部门反馈中心：只保留评价所需字段</strong><p>用人部门围绕反馈节点填写结论、详细反馈、可用时间与负责人，减少无关操作。</p></figcaption>
+            </figure>
+            <figure class="screen-card">
+              <div class="screen-frame"><img src="/assets/hr-system/process-board.webp" alt="按招聘阶段分组的流程推进视图" loading="lazy"></div>
+              <figcaption><span>03 · PROCESS CONTROL</span><strong>流程看板：状态、按钮和时间共同驱动推进</strong><p>候选人按约复试、约终试、约群面等阶段分组，反馈结论与面试时间在同一视图中完成核对。</p></figcaption>
+            </figure>
+          </div>
+          <div class="prototype-note">
+            <span>AI ASSISTED ENTRY</span>
+            <div><strong>简历上传后自动建档</strong><p>原型演示中，Notion AI 解析单份简历并写入候选人库，默认进入“笔试”阶段，同时生成下一步动作与时间，并整理简历要点和待补字段。当前证明的是完整交互闭环，不代表已经验证批量解析准确率或规模化成本。</p></div>
+          </div>
+        </section>
+
         <section id="workflow">
-          <p class="kicker">03 · WORKFLOW</p>
+          <p class="kicker">04 · WORKFLOW</p>
           <h2>核心流程</h2>
           <ol class="flow-list">
-            <li><div><b>候选人进入系统</b><span>建立候选人档案，记录岗位、部门、负责人、联系方式和简历材料。</span></div></li>
+            <li><div><b>候选人进入系统</b><span>手动建档或上传简历由 AI 辅助提取，记录岗位、部门、负责人、联系方式、简历要点与待补字段。</span></div></li>
             <li><div><b>HR 设定下一步</b><span>根据当前流程节点写入下一步动作与时间，系统据此生成执行视图。</span></div></li>
             <li><div><b>面试或评估发生</b><span>候选人进入笔试、群面、复试或终面，并在日历中形成排期。</span></div></li>
             <li><div><b>发起部门反馈</b><span>创建与候选人关联的反馈记录，用人部门只需填写结论、要点与可用时间。</span></div></li>
@@ -87,7 +114,7 @@
         </section>
 
         <section id="views">
-          <p class="kicker">04 · WORKSPACE</p>
+          <p class="kicker">05 · WORKSPACE</p>
           <h2>四个执行视图</h2>
           <div class="view-grid">
             <div class="info-card"><span>VIEW 01</span><h3>今日待办</h3><p>筛选仍在进行且下一步时间已经到期或到今天的候选人，强调“现在做什么”。</p></div>
@@ -98,7 +125,7 @@
         </section>
 
         <section id="model">
-          <p class="kicker">05 · DATA MODEL</p>
+          <p class="kicker">06 · DATA MODEL</p>
           <h2>双数据库建模</h2>
           <table class="data-table">
             <thead><tr><th>对象</th><th>关键字段</th><th>职责</th></tr></thead>
@@ -112,7 +139,7 @@
         </section>
 
         <section id="decisions">
-          <p class="kicker">06 · PRODUCT DECISIONS</p>
+          <p class="kicker">07 · PRODUCT DECISIONS</p>
           <h2>关键产品决策</h2>
           <div class="decision-grid">
             <div class="info-card"><span>DECISION 01</span><h3>视图不是新数据</h3><p>今日待办、异常、日历和看板都基于同一候选人库，避免复制多份名单造成状态漂移。</p></div>
@@ -123,17 +150,17 @@
         </section>
 
         <section id="limits">
-          <p class="kicker">07 · LIMITATIONS</p>
+          <p class="kicker">08 · LIMITATIONS</p>
           <h2>局限与下一步</h2>
           <div class="limitations">
             <strong>当前不能证明的内容</strong>
             <ul>
               <li>尚无真实招聘团队持续使用，因此不宣称效率、周期或转化率提升。</li>
-              <li>原型中的 AI 简历提取需要进一步核实完整实现范围。</li>
+              <li>AI 简历提取已完成单份简历的原型级演示，尚未验证批量处理准确率、失败兜底与规模化成本。</li>
               <li>当前反馈关系偏向单条记录，真实多轮招聘应支持一名候选人关联多次反馈。</li>
             </ul>
           </div>
-          <p style="margin-top:24px">下一步会补充虚构候选人的完整演示数据、脱敏页面截图和短视频；同时进一步设计权限、重复候选人识别、通知失败处理和招聘漏斗指标。</p>
+          <p style="margin-top:24px">本案例已经补充虚构演示数据与界面截图。下一步会制作 60–90 秒公开演示，并进一步设计权限、重复候选人识别、通知失败处理、批量简历解析和招聘漏斗指标。</p>
         </section>
 
         <div class="case-cta">
