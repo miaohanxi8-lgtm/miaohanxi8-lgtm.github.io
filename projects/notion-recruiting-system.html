@@ -27,6 +27,11 @@
           <div><small>性质</small><strong>产品原型</strong></div>
         </div>
       </div>
+      <div class="case-actions" aria-label="Notion 原型体验入口">
+        <a class="button primary" href="https://app.notion.com/p/HR-de8e094cc1168398a456010d330ecf99?source=copy_link" target="_blank" rel="noopener noreferrer">体验 HR 工作台 <span>↗</span></a>
+        <a class="button secondary" href="https://app.notion.com/p/8e4e094cc1168283985301fdfed18f11?source=copy_link" target="_blank" rel="noopener noreferrer">体验部门反馈中心 ↗</a>
+        <a class="button quiet" href="https://app.notion.com/p/HR-12ce094cc11683ba861f0150a9f383b5?source=copy_link" target="_blank" rel="noopener noreferrer">查看系统总览 ↗</a>
+      </div>
     </section>
 
     <div class="disclosure shell"><strong>事实边界</strong>这是面试方案作业形成的产品原型，尚未经过真实招聘团队长期使用；页面中的候选人、公司、时间与反馈均为虚构演示数据。AI 简历提取已完成原型级演示，但未进行真实团队规模化验证，因此不表述为效率提升。</div>
@@ -41,7 +46,7 @@
         <a href="#views">05 · 工作台设计</a>
         <a href="#model">06 · 数据模型</a>
         <a href="#decisions">07 · 产品决策</a>
-        <a href="#limits">08 · 局限与迭代</a>
+        <a href="#limits">08 · 验证边界</a>
       </aside>
 
       <article class="case-content">
@@ -131,7 +136,7 @@
             <thead><tr><th>对象</th><th>关键字段</th><th>职责</th></tr></thead>
             <tbody>
               <tr><td>候选人</td><td>流程阶段、下一步动作/时间、岗位、部门、负责人、面试时间、异常标记</td><td>承载完整推进状态，是唯一事实来源。</td></tr>
-              <tr><td>部门反馈</td><td>候选人、反馈节点、结论、详细反馈、可用时间、负责人</td><td>承载每次评估结果，保证结论可追溯。</td></tr>
+              <tr><td>部门反馈</td><td>候选人、反馈节点、结论、详细反馈、可用时间、负责人</td><td>承载每轮评估结果；一名候选人可关联多轮反馈，保证全过程可追溯。</td></tr>
               <tr><td>关系与汇总</td><td>候选人 ↔ 部门反馈、反馈结论、面试官、可用时间</td><td>让部门输入自动回到 HR 的候选人视图。</td></tr>
               <tr><td>按钮与状态</td><td>发起反馈、通过、不通过、下一步动作</td><td>把流程规则转化为可执行操作。</td></tr>
             </tbody>
@@ -150,24 +155,26 @@
         </section>
 
         <section id="limits">
-          <p class="kicker">08 · LIMITATIONS</p>
-          <h2>局限与下一步</h2>
+          <p class="kicker">08 · VERIFICATION BOUNDARY</p>
+          <h2>验证边界</h2>
           <div class="limitations">
             <strong>当前不能证明的内容</strong>
             <ul>
               <li>尚无真实招聘团队持续使用，因此不宣称效率、周期或转化率提升。</li>
               <li>AI 简历提取已完成单份简历的原型级演示，尚未验证批量处理准确率、失败兜底与规模化成本。</li>
-              <li>当前反馈关系偏向单条记录，真实多轮招聘应支持一名候选人关联多次反馈。</li>
             </ul>
           </div>
-          <p style="margin-top:24px">本案例已经补充虚构演示数据与界面截图。下一步会制作 60–90 秒公开演示，并进一步设计权限、重复候选人识别、通知失败处理、批量简历解析和招聘漏斗指标。</p>
         </section>
 
         <div class="case-cta">
-          <p class="kicker" style="color:#c8f45b">NEXT CASE</p>
-          <h2>作品集仍在持续完善。</h2>
-          <p>下一步将整理秋招作战 Skill 的公开版本，并补充企业 AI 应用案例。</p>
-          <a href="/">返回所有项目 →</a>
+          <p class="kicker" style="color:#c8f45b">LIVE PROTOTYPE</p>
+          <h2>进入 Notion，体验完整招聘工作流。</h2>
+          <p>从 HR 的待办、异常处理、面试排期与流程看板，到用人部门提交多轮结构化反馈，三个入口共同组成可操作的完整原型。</p>
+          <div class="case-cta-actions">
+            <a href="https://app.notion.com/p/HR-de8e094cc1168398a456010d330ecf99?source=copy_link" target="_blank" rel="noopener noreferrer">HR 工作台 ↗</a>
+            <a class="secondary" href="https://app.notion.com/p/8e4e094cc1168283985301fdfed18f11?source=copy_link" target="_blank" rel="noopener noreferrer">部门反馈中心 ↗</a>
+            <a class="secondary" href="https://app.notion.com/p/HR-12ce094cc11683ba861f0150a9f383b5?source=copy_link" target="_blank" rel="noopener noreferrer">系统总览 ↗</a>
+          </div>
         </div>
       </article>
     </div>
