@@ -13,6 +13,25 @@ param(
 $ErrorActionPreference = 'Stop'
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $pythonScript = Join-Path $scriptDir 'qq_mail_export.py'
+
+if ([string]::IsNullOrWhiteSpace($DataDir)) {
+    if (-not [string]::IsNullOrWhiteSpace($env:AUTUMN_RECRUITMENT_MAIL_DATA_DIR)) {
+        $DataDir = $env:AUTUMN_RECRUITMENT_MAIL_DATA_DIR
+    }
+    else {
+        $skillRoot = Split-Path -Parent (Split-Path -Parent $scriptDir)
+        $codexSkillsDir = Split-Path -Parent $skillRoot
+        $codexDir = Split-Path -Parent $codexSkillsDir
+        $userProfileFromSkill = Split-Path -Parent $codexDir
+        $migratedDataDir = Join-Path $userProfileFromSkill 'Documents\Codex\.runtime\autumn-recruitment-system\qq_job_mail'
+        $migratedConfig = Join-Path $migratedDataDir 'config.json'
+        $migratedSecret = Join-Path $migratedDataDir 'qq_auth.dpapi'
+        if ((Test-Path -LiteralPath $migratedConfig) -and (Test-Path -LiteralPath $migratedSecret)) {
+            $DataDir = $migratedDataDir
+        }
+    }
+}
+
 $commonArgs = @()
 if (-not [string]::IsNullOrWhiteSpace($DataDir)) {
     $commonArgs += @('--data-dir', $DataDir)
