@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 全球商业创新大会官网、小程序与 AI 智能助手：多端会务体验、知识库、意图路由、工作流与真实上线案例">
+  <title>GBIC 2026 多端产品与 AI 智能助手 · Case Study</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">PORTFOLIO <span>/ CASE 03</span></a>
+    <nav aria-label="案例导航">
+      <a href="/">首页</a>
+      <a href="#architecture">系统架构</a>
+      <a class="nav-cta" href="https://www.coze.cn/store/agent/7650425797701910566">体验智能助手 ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero gbic-hero shell">
+      <a class="back-link" href="/">← 返回作品集</a>
+      <div class="eyebrow" style="margin-top:45px"><span></span> CASE STUDY · ENTERPRISE AI EXPERIENCE</div>
+      <h1>GBIC 2026 多端产品<br><em>与 AI 智能助手</em></h1>
+      <div class="case-summary">
+        <p>围绕 2026 全球商业创新大会，参与建设官网、小程序与 AI 智能助手组成的多端服务系统：让参会者能够获取议程与会务信息、查看个性化参会状态、浏览产品与案例，并通过自然语言完成信息查询与参会规划。</p>
+        <div class="meta-list">
+          <div><small>项目周期</small><strong>2026.04 — 08</strong></div>
+          <div><small>业务场景</small><strong>大型商业大会</strong></div>
+          <div><small>核心角色</small><strong>AI Agent + 产品协同</strong></div>
+          <div><small>交付形态</small><strong>官网 · 小程序 · 智能体</strong></div>
+        </div>
+      </div>
+      <div class="case-actions">
+        <a class="button primary" href="https://www.yonyou.com/gbic/#/">浏览大会官网 <span>↗</span></a>
+        <a class="button secondary" href="https://www.coze.cn/store/agent/7650425797701910566">体验 AI 智能助手 ↗</a>
+        <a class="button quiet" href="#mini-program">扫码进入小程序 ↓</a>
+      </div>
+    </section>
+
+    <div class="disclosure shell"><strong>个人职责</strong>独立负责 AI 智能助手的需求澄清、提示词、知识库、意图路由、工作流配置、测试调优与复盘；在官网和小程序中负责信息架构、页面与状态逻辑、导航关系、接口需求、业务与技术对齐、验收和上线推动。前端开发与接口实现由供应商和 IT 团队完成。</div>
+
+    <div class="case-layout shell">
+      <aside class="case-toc">
+        <b>CASE CONTENT</b>
+        <a href="#context">01 · 项目背景</a>
+        <a href="#architecture">02 · 系统架构</a>
+        <a href="#touchpoints">03 · 三端产品体验</a>
+        <a href="#agent">04 · 智能体决策层</a>
+        <a href="#workflows">05 · 两条工作流</a>
+        <a href="#knowledge">06 · 知识与评测</a>
+        <a href="#delivery">07 · 协作与交付</a>
+        <a href="#results">08 · 上线结果</a>
+      </aside>
+
+      <article class="case-content">
+        <section id="context">
+          <p class="kicker">01 · CONTEXT</p>
+          <h2>从“做一个大会 AI 助手”，定义完整服务系统</h2>
+          <p class="lead">参会者面对的不只是一个问答场景，而是一整段从会前了解、报名与行程规划，到会中导航、议程与服务，再到会后直播回放和产品咨询的连续旅程。</p>
+          <div class="goal-grid gbic-goals">
+            <div class="info-card"><span>GOAL 01 · 会务服务</span><h3>信息随时可查</h3><p>集中提供大会背景、嘉宾、议程、场馆、交通、餐饮、直播与参会指南等高频信息。</p></div>
+            <div class="info-card"><span>GOAL 02 · 个性化体验</span><h3>从公共内容进入本人行程</h3><p>识别用户报名与签到状态，展示个人参会信息，并支持进入报名补录和论坛详情。</p></div>
+            <div class="info-card"><span>GOAL 03 · 业务咨询</span><h3>大会之后仍能继续了解</h3><p>把产品介绍、客户案例和企业信息纳入智能服务，连接活动体验与业务认知。</p></div>
+            <div class="info-card"><span>GOAL 04 · 多端一致</span><h3>官网、小程序与智能体协同</h3><p>公共内容跨端复用，用户状态由小程序承载，AI 助手提供统一的自然语言入口。</p></div>
+          </div>
+        </section>
+
+        <section id="architecture">
+          <p class="kicker">02 · SYSTEM ARCHITECTURE</p>
+          <h2>三端入口，共用内容与服务底座</h2>
+          <p>系统由体验入口、业务服务、数据与内容、AI 决策四个层次组成。官网承担公开传播，小程序承载用户态服务，智能体把分散的信息和能力组织成可对话的服务。</p>
+          <div class="gbic-architecture">
+            <div class="gbic-layer channel-layer">
+              <span>TOUCHPOINTS</span>
+              <div><b>大会官网</b><p>品牌内容 · 议程 · 嘉宾 · 直播 · 资讯</p></div>
+              <div><b>微信小程序</b><p>个人状态 · 报名 · 签到 · 行程 · 会务入口</p></div>
+              <div><b>AI 智能助手</b><p>自然语言问答 · 参会规划 · 产品与案例咨询</p></div>
+            </div>
+            <i>↓</i>
+            <div class="gbic-layer service-layer">
+              <span>SERVICE LAYER</span>
+              <div><b>会务服务</b><p>议程、场馆、交通、餐饮与现场服务</p></div>
+              <div><b>活动服务</b><p>论坛、专家、新闻、视频与直播</p></div>
+              <div><b>业务服务</b><p>产品、案例与企业信息</p></div>
+            </div>
+            <i>↓</i>
+            <div class="gbic-layer data-layer">
+              <span>DATA & CONTENT</span>
+              <div><b>公开内容接口</b><p>论坛 · 专家 · 资讯 · 视频</p></div>
+              <div><b>用户状态接口</b><p>授权 · 报名 · 审核 · 签到</p></div>
+              <div><b>知识资产</b><p>参会指南 · FAQ · 产品 · 案例</p></div>
+            </div>
+            <i>↕</i>
+            <div class="gbic-layer ai-layer">
+              <span>AI ORCHESTRATION</span>
+              <div><b>提示词控制</b><p>语言、风格、边界与处理顺序</p></div>
+              <div><b>意图路由</b><p>大会、规划、业务、敏感与其他问题</p></div>
+              <div><b>工作流执行</b><p>检索、清洗、判断、重排与生成</p></div>
+            </div>
+          </div>
+          <div class="prototype-note"><span>ARCHITECTURE PRINCIPLE</span><div><strong>公共内容复用，用户状态分层</strong><p>官网和小程序共用论坛、专家、新闻和视频等公开数据；报名、审核、签到等用户态信息只在授权后读取。直播和跨页面服务则通过嵌入或跳转连接，减少重复建设。</p></div></div>
+        </section>
+
+        <section id="touchpoints">
+          <p class="kicker">03 · MULTI-TOUCHPOINT EXPERIENCE</p>
+          <h2>官网负责传播，小程序负责参会，智能体负责理解</h2>
+          <div class="touchpoint-grid">
+            <figure class="screen-card website-card">
+              <div class="screen-frame"><img src="/assets/gbic/website-overview.webp" alt="2026 全球商业创新大会官网页面"></div>
+              <figcaption><span>WEB EXPERIENCE</span><strong>大会官网</strong><p>以大会亮点、议程、嘉宾、资讯、视频和合作伙伴构成公开信息主阵地，并承载直播与回放入口。</p></figcaption>
+            </figure>
+            <div class="touchpoint-side">
+              <figure class="screen-card">
+                <div class="screen-frame"><img src="/assets/gbic/coze-agent.webp" alt="2026 全球商业创新大会智能助手"></div>
+                <figcaption><span>CONVERSATIONAL ENTRY</span><strong>AI 智能助手</strong><p>将会务服务、产品信息与案例查询汇入一个自然语言入口，并根据问题类型切换处理路径。</p></figcaption>
+              </figure>
+              <figure class="screen-card qr-card" id="mini-program">
+                <div class="screen-frame"><img src="/assets/gbic/mini-program-code.webp" alt="2026 全球商业创新大会微信小程序码"></div>
+                <figcaption><span>MINI PROGRAM</span><strong>微信扫码体验</strong><p>小程序承载个人参会状态、报名入口、论坛与会务信息。请使用微信扫码打开。</p></figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="journey-strip">
+            <div><span>BEFORE</span><b>会前了解与规划</b><p>大会信息、报名状态、议程选择与参会路线</p></div>
+            <i>→</i>
+            <div><span>DURING</span><b>会中导航与服务</b><p>时间地点、场馆交通、餐饮与现场问题</p></div>
+            <i>→</i>
+            <div><span>AFTER</span><b>内容回看与咨询</b><p>直播回放、新闻视频、产品与案例了解</p></div>
+          </div>
+        </section>
+
+        <section id="agent">
+          <p class="kicker">04 · AGENT DECISION LAYER</p>
+          <h2>提示词定义行为，意图路由决定去哪里找答案</h2>
+          <p class="lead">智能体先判断问题属于什么场景，再决定调用大会知识、业务工作流、联网搜索或服务兜底。这样可以避免所有问题都挤进同一套检索逻辑。</p>
+          <div class="routing-map">
+            <div class="route-entry"><small>USER INPUT</small><b>用户问题</b><p>自动识别中、英、日、韩、阿拉伯语</p></div>
+            <i>→</i>
+            <div class="route-core"><small>ROUTER</small><b>六类互斥意图</b><p>按优先级命中，避免重复执行</p></div>
+            <div class="route-branches">
+              <div><span>01</span><b>呼叫与固定回复</b><p>识别助手称呼等明确指令</p></div>
+              <div><span>02</span><b>敏感与越界问题</b><p>进入安全边界与服务引导</p></div>
+              <div><span>03</span><b>需要人工判断</b><p>复杂或不可直接处理的请求</p></div>
+              <div><span>04</span><b>参会规划</b><p>综合日期、议程与用户偏好</p></div>
+              <div><span>05</span><b>大会服务问答</b><p>日程、场馆、交通、签到等</p></div>
+              <div><span>06</span><b>用友业务问题</b><p>产品、案例和企业信息</p></div>
+            </div>
+          </div>
+          <div class="answer-rules">
+            <div><span>LANGUAGE</span><b>同语言回答</b><p>保留官方产品名称与固定翻译</p></div>
+            <div><span>FORMAT</span><b>信息结构化</b><p>时间、地点、活动与注意事项突出呈现</p></div>
+            <div><span>BOUNDARY</span><b>关键事实不猜测</b><p>会务信息回到参会指南，无法处理时给出官方渠道</p></div>
+            <div><span>CHANNEL</span><b>答案连接行动</b><p>必要时引导官网、小程序或客户经理</p></div>
+          </div>
+        </section>
+
+        <section id="workflows">
+          <p class="kicker">05 · WORKFLOW ORCHESTRATION</p>
+          <h2>业务知识与联网补充，走两条不同路径</h2>
+          <p>产品与案例问题需要对多类知识结果进行识别、清洗和重排；当内部内容不足且问题需要近期公开信息时，再进入联网搜索工作流。两条路径在最后统一回到答案生成。</p>
+          <div class="workflow-summary">
+            <div class="track-panel"><span>BUSINESS ANSWER FLOW</span><h3>产品与案例检索</h3><ul><li>识别语言、意图和产品名称</li><li>改写问题并分别检索产品、案例与其他业务知识</li><li>用代码节点清洗不同知识源的返回结构</li><li>判断内容充分性，重排后生成回答</li></ul></div>
+            <div class="track-panel accent-panel"><span>SEARCHING AGENT</span><h3>公开信息搜索</h3><ul><li>为原问题生成更适合搜索的查询</li><li>调用公开网页搜索并收集候选材料</li><li>清理重复字段、无效片段和格式噪声</li><li>生成初步总结并交回主智能体</li></ul></div>
+          </div>
+          <div class="screen-gallery workflow-gallery">
+            <figure class="screen-card screen-card-wide">
+              <div class="screen-frame workflow-frame"><img src="/assets/gbic/agent-business-workflow.webp" alt="大会智能体产品与案例业务工作流"></div>
+              <figcaption><span>WORKFLOW 01</span><strong>业务问答工作流</strong><p>从语言与意图识别开始，根据问题分流检索产品、案例和其他业务知识，再经过清洗、充分性判断和生成节点返回答案。</p></figcaption>
+            </figure>
+            <figure class="screen-card screen-card-wide">
+              <div class="screen-frame workflow-frame"><img src="/assets/gbic/agent-search-workflow.webp" alt="大会智能体联网搜索工作流"></div>
+              <figcaption><span>WORKFLOW 02</span><strong>联网搜索工作流</strong><p>将搜索查询生成、网页检索、结果清洗和初步总结拆成独立节点，为近期公开信息提供受控补充。</p></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="knowledge">
+          <p class="kicker">06 · KNOWLEDGE & EVALUATION</p>
+          <h2>知识不是一个文件夹，而是一套可维护的服务资产</h2>
+          <p class="lead">不同问题需要不同颗粒度的知识单元。大会事实、常见问答、产品说明与客户案例被拆分管理，再通过固定测试集验证回答是否准确、完整且守住边界。</p>
+          <div class="knowledge-metrics">
+            <div><strong>7</strong><span>复杂任务文档单元</span></div>
+            <div><strong>107</strong><span>大会 FAQ</span></div>
+            <div><strong>4,459</strong><span>业务问答</span></div>
+            <div><strong>178</strong><span>客户案例</span></div>
+            <div><strong>31</strong><span>产品资料</span></div>
+            <div><strong>100+</strong><span>测试问题</span></div>
+          </div>
+          <div class="evaluation-loop">
+            <div><span>01</span><b>知识整理</b><p>统一命名、编号与结构，明确内容归属</p></div><i>→</i>
+            <div><span>02</span><b>业务确认</b><p>由内容负责人核对事实与发布边界</p></div><i>→</i>
+            <div><span>03</span><b>导入抽检</b><p>检查切片、召回内容与页面展示</p></div><i>→</i>
+            <div><span>04</span><b>固定题回归</b><p>每次调整后重新验证核心问题</p></div><i>↺</i>
+            <div><span>05</span><b>定位调试</b><p>逐节点检查输入输出，一次验证一个假设</p></div>
+          </div>
+          <div class="quality-grid">
+            <div><b>准确性</b><p>事实、数字、时间与地点是否正确</p></div>
+            <div><b>完整性</b><p>多问法、多意图是否被逐项覆盖</p></div>
+            <div><b>个性化</b><p>参会规划是否结合日期与需求</p></div>
+            <div><b>边界</b><p>敏感、越界和无法确认内容是否正确处理</p></div>
+            <div><b>语言</b><p>多语言与专有名词是否符合规范</p></div>
+            <div><b>可追溯</b><p>能否定位到具体知识和工作流节点</p></div>
+          </div>
+        </section>
+
+        <section id="delivery">
+          <p class="kicker">07 · DELIVERY & COLLABORATION</p>
+          <h2>把业务需求翻译成可实现、可验收的产品逻辑</h2>
+          <div class="delivery-model">
+            <div class="delivery-owner"><span>MY OWNERSHIP</span><h3>智能体核心与产品侧协同</h3><ul><li>澄清大会 AI 助手的目标与服务范围</li><li>独立完成提示词、知识库、路由和工作流配置</li><li>设计官网与小程序的信息架构、状态逻辑和导航关系</li><li>定义接口需求、整理跨端数据关系和验收规则</li><li>使用固定测试集调试智能体并推动多端上线</li></ul></div>
+            <div class="delivery-partners"><span>DELIVERY PARTNERS</span><div><b>IT 团队</b><p>提供用户、活动、内容等数据接口与技术支持</p></div><div><b>外部供应商</b><p>完成官网设计实现、小程序开发与接口接入</p></div><div><b>业务与内容团队</b><p>确认大会信息、产品资料、案例与发布口径</p></div></div>
+          </div>
+          <div class="prototype-note"><span>PRODUCT VALUE</span><div><strong>核心贡献不只是“提出需求”</strong><p>通过页面状态、数据来源、跳转关系、异常情况和验收标准，把业务语言转成供应商和 IT 能共同执行的产品与数据逻辑，再用真实页面和测试结果检查交付质量。</p></div></div>
+        </section>
+
+        <section id="results">
+          <p class="kicker">08 · LIVE RESULTS</p>
+          <h2>系统随大会正式上线，并产生真实使用数据</h2>
+          <div class="result-hero">
+            <div><small>EVENT SCALE</small><strong>约 11,000</strong><p>线下参会者</p></div>
+            <div><small>LIVE STREAM</small><strong>20,000+</strong><p>直播观看</p></div>
+            <div><small>MINI PROGRAM</small><strong>5,250</strong><p>独立访问用户</p></div>
+            <div><small>MINI PROGRAM</small><strong>30,499</strong><p>打开次数</p></div>
+          </div>
+          <div class="result-split">
+            <div class="result-panel"><span>AI ASSISTANT · 08.01—08.10</span><h3>真实问题验证了服务需求</h3><div class="result-numbers"><div><b>365</b><p>用户问题</p></div><div><b>268</b><p>会话</p></div><div><b>264</b><p>去重后问题文本</p></div></div><p>高频需求集中在报名签到、直播回放、议程场馆和交通餐饮等会务场景，也包含产品与案例咨询。</p></div>
+            <div class="result-panel"><span>MINI PROGRAM · 08.03—08.09</span><h3>用户不仅到达首页，也持续浏览核心内容</h3><ul><li>7 日人均打开约 5.81 次</li><li>50.73% 的用户浏览 6 个及以上页面</li><li>议程页到达率 57.99%</li><li>技术峰会详情页到达率 56.17%</li></ul></div>
+          </div>
+          <p class="micro-note">小程序访问用户规模约为线下参会人数的 47.7%；由于缺少跨系统身份去重，该比例用于描述规模关系，不等同于严格参会覆盖率。智能体测试采用逐题验收，未计算汇总准确率。</p>
+        </section>
+
+        <div class="case-cta gbic-cta">
+          <p class="kicker" style="color:#c8f45b">LIVE EXPERIENCE</p>
+          <h2>从页面到对话，体验已经上线的多端系统。</h2>
+          <p>官网呈现完整大会内容，AI 智能助手提供会务、产品与案例查询，小程序承载个人参会服务。</p>
+          <div class="case-cta-actions">
+            <a href="https://www.yonyou.com/gbic/#/">浏览大会官网 ↗</a>
+            <a class="secondary" href="https://www.coze.cn/store/agent/7650425797701910566">体验智能助手 ↗</a>
+            <a class="secondary" href="#mini-program">查看小程序码 ↑</a>
+            <a class="secondary" href="/">返回所有项目 →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer shell"><p>AI Product & Data Portfolio</p><p>Case 03 · GBIC 2026 Multi-touchpoint AI Experience</p><a href="/">Back to home ↑</a></footer>
+</body>
+</html>
+
