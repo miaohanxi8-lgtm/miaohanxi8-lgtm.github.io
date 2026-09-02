@@ -56,3 +56,44 @@ h1,h2,h3,p{margin-top:0}h1{font-size:clamp(46px,7vw,92px);line-height:1.04;lette
 @media(max-width:520px){
   .shell{width:min(100% - 28px,1180px)}.site-header{height:66px;padding:0 14px}.brand span{display:none}.nav-cta{padding:8px 12px}.hero{padding-top:56px}h1{font-size:43px}.hero-copy{font-size:16px}.hero-actions{display:grid;margin-bottom:52px}.capability-strip{grid-template-columns:1fr}.capability-strip>div{border-right:0;border-bottom:1px solid var(--line)!important}.project-grid{grid-template-columns:1fr}.featured-card{padding:20px}.project-copy h3{font-size:28px}.preview-grid{grid-template-columns:82px 1fr}.principles>div{grid-template-columns:35px 1fr}.principles p{grid-column:2}.case-summary>p{font-size:17px}.meta-list{margin-top:28px}.case-actions{display:grid}.case-actions .button{text-align:center}.case-cta-actions{display:grid}.case-cta-actions a{text-align:center}.architecture{padding:20px}.case-content h2{font-size:30px}.prototype-note{grid-template-columns:1fr;gap:8px}.screen-card figcaption{padding:16px}
 }
+
+
+/* Autumn recruitment system case */
+.skill-architecture{display:grid;gap:12px;background:var(--ink);padding:30px;margin-top:28px;color:white}
+.skill-layer{display:grid;grid-template-columns:155px 1fr;gap:18px;align-items:center;border:1px solid rgba(255,255,255,.18);padding:17px}
+.skill-layer>span{font-size:10px;letter-spacing:.13em;color:#aebcb3;font-weight:700}
+.skill-layer-nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.skill-layer-nodes b{background:rgba(255,255,255,.07);padding:13px;text-align:center;font-size:13px}
+.core-layer{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.core-layer>span{color:var(--green)}.core-layer .skill-layer-nodes b{background:rgba(23,33,27,.08)}
+.output-layer{border-color:rgba(200,244,91,.55)}
+.skill-metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:14px;background:var(--card)}
+.skill-metrics div{padding:20px;border-right:1px solid var(--line)}.skill-metrics div:last-child{border:0}
+.skill-metrics strong{display:block;font-size:32px;line-height:1;color:var(--green)}.skill-metrics span{font-size:11px;color:var(--muted)}
+.pipeline-steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:none}
+.pipeline-steps li{background:var(--card);border:1px solid var(--line);padding:20px;min-height:178px}
+.pipeline-steps span{font-size:10px;color:var(--green);font-weight:700}.pipeline-steps b{display:block;font-size:18px;margin:7px 0}.pipeline-steps p{font-size:13px;color:var(--muted);margin:0}
+.object-model{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.object-card{background:var(--card);border:1px solid var(--line);padding:20px}.object-card.primary-object{grid-row:span 2;background:var(--green);color:white;display:flex;flex-direction:column;justify-content:center}
+.object-card span{font-size:10px;color:var(--green);font-weight:700}.primary-object span{color:var(--lime)}
+.object-card b{display:block;font-size:18px;margin:7px 0}.object-card p{font-size:13px;color:var(--muted);margin:0}.primary-object p{color:#d8e6dc}
+.knowledge-loop{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr 32px 1fr;align-items:stretch;margin:26px 0}
+.knowledge-loop>div{background:var(--card);border:1px solid var(--line);padding:18px}.knowledge-loop>i{display:grid;place-items:center;font-style:normal;color:var(--green);font-size:20px}
+.knowledge-loop span{font-size:10px;color:var(--green);font-weight:700}.knowledge-loop b{display:block;margin:7px 0}.knowledge-loop p{font-size:12px;color:var(--muted);margin:0}
+.engineering-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.code-proof{background:#111b15;color:white;padding:30px;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center}
+.code-proof strong{font-size:38px;display:block;margin:18px 0 0}.code-proof p{color:#aebcb3;font-size:13px}
+.pass-badge{display:inline-block;background:var(--lime);color:var(--ink);font-size:10px;letter-spacing:.1em;font-weight:700;padding:7px 9px}
+.file-tree{margin:0;background:#0a100c;border:1px solid rgba(255,255,255,.14);padding:20px;overflow:auto;color:#d6e6da;font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}
+.published-card{border-color:#9fb878}.published-card .status{background:var(--lime);border-color:var(--ink);color:var(--ink)}
+@media(max-width:850px){
+  .skill-layer{grid-template-columns:1fr}.skill-layer-nodes{grid-template-columns:1fr}
+  .skill-metrics{grid-template-columns:1fr 1fr}.skill-metrics div:nth-child(2){border-right:0}.skill-metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .pipeline-steps,.object-model,.engineering-grid{grid-template-columns:1fr}.object-card.primary-object{grid-row:auto}
+  .knowledge-loop{grid-template-columns:1fr}.knowledge-loop>i{transform:rotate(90deg);padding:5px}
+  .code-proof{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .skill-architecture{padding:16px}.skill-metrics{grid-template-columns:1fr}.skill-metrics div{border-right:0;border-bottom:1px solid var(--line)}.skill-metrics div:last-child{border-bottom:0}
+  .code-proof{padding:20px}.file-tree{font-size:10px}
+}

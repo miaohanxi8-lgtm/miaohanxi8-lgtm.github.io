@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI 秋招作战系统：从求职邮件到面试能力闭环的 Codex Skill 案例">
+  <title>AI 秋招作战系统 · Case Study</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">PORTFOLIO <span>/ CASE 02</span></a>
+    <nav><a href="/">首页</a><a class="nav-cta" href="https://github.com/miaohanxi8-lgtm/miaohanxi8-lgtm.github.io/tree/main/skills/autumn-recruitment-system">查看源码 ↗</a></nav>
+  </header>
+
+  <main>
+    <section class="case-hero shell">
+      <a class="back-link" href="/">← 返回作品集</a>
+      <div class="eyebrow" style="margin-top:45px"><span></span> CASE STUDY · PERSONAL AI SYSTEM</div>
+      <h1>AI 秋招作战系统<br><em>从求职邮件到能力闭环</em></h1>
+      <div class="case-summary">
+        <p>把散落在 QQ 邮件、Notion 页面、面试日程和复盘记录里的求职信息，组织成一套可去重、可联动、可校验，并持续积累能力证据的 Codex Skill。</p>
+        <div class="meta-list">
+          <div><small>角色</small><strong>独立设计与实现</strong></div>
+          <div><small>形态</small><strong>Codex Skill</strong></div>
+          <div><small>技术</small><strong>Python · Notion</strong></div>
+          <div><small>验证</small><strong>6 / 6 tests</strong></div>
+        </div>
+      </div>
+      <div class="case-actions">
+        <a class="button primary" href="https://github.com/miaohanxi8-lgtm/miaohanxi8-lgtm.github.io/tree/main/skills/autumn-recruitment-system">浏览公开源码 <span>↗</span></a>
+        <a class="button secondary" href="https://github.com/miaohanxi8-lgtm/miaohanxi8-lgtm.github.io/blob/main/skills/autumn-recruitment-system/SKILL.md">阅读 SKILL.md ↗</a>
+      </div>
+    </section>
+
+    <div class="disclosure shell"><strong>系统概览</strong>邮件自动化负责捕捉新增求职事实，Notion 承载岗位、任务、面试与知识资产，Codex Skill 负责语义判断与跨对象联动，确定性脚本负责标准化、精确匹配、结构校验和耗时估算。</div>
+
+    <div class="case-layout shell">
+      <aside class="case-toc">
+        <b>CASE CONTENT</b>
+        <a href="#context">01 · 问题与目标</a>
+        <a href="#architecture">02 · 系统架构</a>
+        <a href="#mail">03 · 邮件与早报</a>
+        <a href="#interview">04 · 面试五对象</a>
+        <a href="#knowledge">05 · 知识与能力闭环</a>
+        <a href="#reliability">06 · 可靠性设计</a>
+        <a href="#evidence">07 · 工程证据</a>
+      </aside>
+
+      <article class="case-content">
+        <section id="context">
+          <p class="kicker">01 · CONTEXT</p>
+          <h2>问题与目标</h2>
+          <p class="lead">求职信息不是缺少记录，而是缺少一条能从“收到变化”走到“完成行动与复盘”的可靠链路。</p>
+          <div class="problem-grid">
+            <div class="info-card"><span>PROBLEM 01</span><h3>邮件变化难以落地</h3><p>邀请、测评、笔试、改期和拒信分散在邮件里，阅读之后仍要手工判断岗位、状态、截止与待办。</p></div>
+            <div class="info-card"><span>PROBLEM 02</span><h3>同一事实反复出现</h3><p>提醒邮件、线程回复和不同发件地址容易造成岗位、任务或面试重复创建。</p></div>
+            <div class="info-card"><span>PROBLEM 03</span><h3>面试准备彼此割裂</h3><p>真实面试、模拟练习、日程、复盘和问题沉淀缺少稳定的对象关系。</p></div>
+            <div class="info-card"><span>PROBLEM 04</span><h3>复盘没有变成能力</h3><p>如果原始问题、成熟答案、练习表现和能力证据混在一起，系统无法判断真正掌握了什么。</p></div>
+          </div>
+        </section>
+
+        <section id="architecture">
+          <p class="kicker">02 · ARCHITECTURE</p>
+          <h2>混合智能架构</h2>
+          <p>系统把语义判断留给 Agent，把容易重复出错的机械步骤交给确定性脚本；Notion 不是展示层，而是全部行动与证据的长期状态库。</p>
+          <div class="skill-architecture">
+            <div class="skill-layer">
+              <span>INPUT</span>
+              <div class="skill-layer-nodes"><b>QQ 求职邮件</b><b>Notion 当前状态</b><b>用户练习与复盘</b></div>
+            </div>
+            <div class="skill-layer core-layer">
+              <span>ORCHESTRATION</span>
+              <div class="skill-layer-nodes"><b>场景路由</b><b>语义判断</b><b>跨对象联动</b></div>
+            </div>
+            <div class="skill-layer">
+              <span>DETERMINISTIC ENGINE</span>
+              <div class="skill-layer-nodes"><b>字段标准化</b><b>严格证据匹配</b><b>计划校验 · 耗时估算</b></div>
+            </div>
+            <div class="skill-layer output-layer">
+              <span>NOTION SYSTEM OF RECORD</span>
+              <div class="skill-layer-nodes"><b>岗位与任务</b><b>面试与早报</b><b>Q&A · 能力图谱</b></div>
+            </div>
+          </div>
+          <div class="skill-metrics">
+            <div><strong>11</strong><span>Notion 数据源</span></div>
+            <div><strong>5</strong><span>每场真人面试联动对象</span></div>
+            <div><strong>4</strong><span>每日早报固定区块</span></div>
+            <div><strong>1</strong><span>每天唯一模拟面试行动</span></div>
+          </div>
+        </section>
+
+        <section id="mail">
+          <p class="kicker">03 · MAIL TO ACTION</p>
+          <h2>邮件不是摘要，而是行动入口</h2>
+          <p class="lead">只有岗位、面试、任务和早报全部成功，系统才提交邮件 UID；中途失败可以安全重跑。</p>
+          <ol class="pipeline-steps">
+            <li><span>01</span><b>只读抓取</b><p>通过 QQ IMAP 读取最近邮件，不发信、不删信、不改变已读状态。</p></li>
+            <li><span>02</span><b>标准化</b><p>提取主题、发件人、域名、编号、申请入口、时间与附件元数据。</p></li>
+            <li><span>03</span><b>精确匹配</b><p>按最强证据层判断唯一命中、歧义或新对象，发件人不能单独证明归属。</p></li>
+            <li><span>04</span><b>状态联动</b><p>更新岗位阶段，创建或复用测评、笔试、面试与材料待办。</p></li>
+            <li><span>05</span><b>生成早报</b><p>整合今日行动、最新变化、未来 7 天和待确认项，避免重复表达。</p></li>
+            <li><span>06</span><b>校验提交</b><p>结构校验通过后提交 max_uid；失败则保留 UID，依靠幂等规则重试。</p></li>
+          </ol>
+        </section>
+
+        <section id="interview">
+          <p class="kicker">04 · INTERVIEW MODEL</p>
+          <h2>一场真人面试，联动五个对象</h2>
+          <p>系统没有把所有信息塞进一张页面，而是让每个对象只承担一种职责，并通过关系保持日期与状态同步。</p>
+          <div class="object-model">
+            <div class="object-card primary-object"><span>01</span><b>真实面试页</b><p>邀请、JD、准备、现场事实与复盘</p></div>
+            <div class="object-card"><span>02</span><b>模拟面试页</b><p>问题、追问、初答与模拟结论</p></div>
+            <div class="object-card"><span>03</span><b>正式日程</b><p>时间、会议入口、地点与执行要求</p></div>
+            <div class="object-card"><span>04</span><b>模拟待办</b><p>针对性准备、能力重点与完成标准</p></div>
+            <div class="object-card"><span>05</span><b>复盘待办</b><p>恢复事实并沉淀问题、答案与能力证据</p></div>
+          </div>
+          <div class="prototype-note"><span>CHANGE PROPAGATION</span><div><strong>改期与取消不是改一个日期</strong><p>改期会同步两个面试页面和三条任务；取消会统一终止五个对象。提醒邮件只补充会议入口、地点或材料要求，不重复创建。</p></div></div>
+        </section>
+
+        <section id="knowledge">
+          <p class="kicker">05 · KNOWLEDGE LOOP</p>
+          <h2>把复盘变成可验证的能力证据</h2>
+          <p class="lead">系统区分现场事实、成熟答案、训练过程和能力结论，避免“模型讲过”被误记为“用户掌握”。</p>
+          <div class="knowledge-loop">
+            <div><span>01</span><b>原始问题</b><p>实际出现的具体问法、追问与当次表现</p></div>
+            <i>→</i>
+            <div><span>02</span><b>Q&A</b><p>共性核心问题、回答主线与个人证据</p></div>
+            <i>→</i>
+            <div><span>03</span><b>能力练习</b><p>初答、提示、修正回答与待复测项</p></div>
+            <i>→</i>
+            <div><span>04</span><b>能力图谱</b><p>理解与独立应用程度，以及最近验证日期</p></div>
+          </div>
+          <div class="decision-grid">
+            <div class="info-card"><span>EVIDENCE 01</span><h3>提示后完成 ≠ 独立掌握</h3><p>只有独立完成相似新 Case，能力才升级为“独立完成”。</p></div>
+            <div class="info-card"><span>EVIDENCE 02</span><h3>润色答案 ≠ 现场表现</h3><p>复盘保留当时回答，不能用事后优化内容倒推当场能力。</p></div>
+          </div>
+        </section>
+
+        <section id="reliability">
+          <p class="kicker">06 · RELIABILITY</p>
+          <h2>让自动化可以安全重跑</h2>
+          <div class="engineering-grid">
+            <div class="info-card"><span>GUARD 01</span><h3>邮箱永远只读</h3><p>不发信、不移动、不删除、不标记已读；授权码只保存在环境变量或当前用户加密存储中。</p></div>
+            <div class="info-card"><span>GUARD 02</span><h3>强证据去重</h3><p>邮件 ID、UID、岗位编号、申请入口与发件域名分层匹配；歧义对象不自动写入。</p></div>
+            <div class="info-card"><span>GUARD 03</span><h3>原子运行数据</h3><p>固定 JSON 文件每轮覆盖，附件内容不落盘，避免本地运行目录无限增长。</p></div>
+            <div class="info-card"><span>GUARD 04</span><h3>提交前结构校验</h3><p>每日模拟数量、面试五对象、早报四段、终态证据与 UID 提交条件统一检查。</p></div>
+          </div>
+        </section>
+
+        <section id="evidence">
+          <p class="kicker">07 · ENGINEERING EVIDENCE</p>
+          <h2>公开的不只是说明文档</h2>
+          <p>脱敏公开包保留完整 Skill 路由、五份领域规则、QQ 邮件脚本、确定性规则引擎、Windows 凭据配置入口与自动化测试；私人 Notion ID、真实邮件和求职数据不进入仓库。</p>
+          <div class="code-proof">
+            <div>
+              <span class="pass-badge">✓ 6 TESTS PASSED</span>
+              <strong>1,425 lines</strong>
+              <p>Skill instructions · domain references · Python · PowerShell · tests</p>
+            </div>
+            <pre class="file-tree">autumn-recruitment-system/
+├─ SKILL.md
+├─ agents/openai.yaml
+├─ references/
+│  ├─ mail-sync.md
+│  ├─ interview-workflow.md
+│  ├─ knowledge-loop.md
+│  ├─ notion-system.md
+│  └─ script-contracts.md
+└─ scripts/
+   ├─ recruitment_rules.py
+   ├─ qq_job_mail/
+   └─ tests/</pre>
+          </div>
+        </section>
+
+        <div class="case-cta">
+          <p class="kicker" style="color:#c8f45b">PUBLIC SKILL</p>
+          <h2>查看脱敏后的完整实现。</h2>
+          <p>公开版本保留系统规则、确定性脚本和测试，并使用配置示例替代私人 Notion 资源定位符。</p>
+          <div class="case-cta-actions">
+            <a href="https://github.com/miaohanxi8-lgtm/miaohanxi8-lgtm.github.io/tree/main/skills/autumn-recruitment-system">浏览源码 ↗</a>
+            <a class="secondary" href="https://github.com/miaohanxi8-lgtm/miaohanxi8-lgtm.github.io/blob/main/skills/autumn-recruitment-system/SKILL.md">阅读 SKILL.md ↗</a>
+            <a class="secondary" href="/">返回所有项目 →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer shell"><p>AI Product & Data Portfolio</p><p>Case 02 · AI Autumn Recruitment Operating System</p><a href="/">Back to home ↑</a></footer>
+</body>
+</html>

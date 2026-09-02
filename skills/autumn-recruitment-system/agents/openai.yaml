@@ -1,0 +1,8 @@
+interface:
+  display_name: "秋招作战系统"
+  short_description: "统一处理秋招邮件、面试、复盘与能力图谱"
+  default_prompt: "使用 $autumn-recruitment-system 处理我的秋招需求，并按最新 Notion 结构安全去重和联动。"
+
+policy:
+  allow_implicit_invocation: true
+

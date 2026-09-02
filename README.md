@@ -9,11 +9,11 @@ https://miaohanxi8-lgtm.github.io
 ## Published case studies
 
 - **Notion Recruiting Operations System** — a two-day recruiting workflow product prototype with a candidate single source of truth, role-based workspaces, structured feedback, scheduling, and exception handling.
+- **AI Autumn Recruitment Operating System** — a public, sanitized Codex Skill connecting read-only job mail, strict deduplication, interview workflows, daily planning, knowledge capture, capability evidence, deterministic validation, and tests.
 
 ## Roadmap
 
 - Enterprise event AI assistant and multi-platform product
-- Autumn recruitment copilot skill
 - Data matching and exception-review workflow
 - Review and document an earlier web crawler project
 
