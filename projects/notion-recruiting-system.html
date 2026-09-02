@@ -34,7 +34,7 @@
       </div>
     </section>
 
-    <div class="disclosure shell"><strong>事实边界</strong>这是面试方案作业形成的产品原型，尚未经过真实招聘团队长期使用；页面中的候选人、公司、时间与反馈均为虚构演示数据。AI 简历提取已完成原型级演示，但未进行真实团队规模化验证，因此不表述为效率提升。</div>
+    <div class="disclosure shell"><strong>系统概览</strong>以候选人库为单一事实源，通过状态、按钮、关系、汇总和时间字段，自动联动 HR 工作台与部门反馈中心，覆盖从简历建档、面试排期、多轮反馈到 Offer 或淘汰的完整招聘流程。</div>
 
     <div class="case-layout shell">
       <aside class="case-toc">
@@ -103,10 +103,7 @@
               <figcaption><span>04 · PROCESS BOARD</span><strong>流程看板：观察候选人的阶段分布</strong><p>按笔试、群面、复试、终面和 Offer 等阶段分组，在同一视图中掌握完整招聘进度。</p></figcaption>
             </figure>
           </div>
-          <div class="prototype-note">
-            <span>AI ASSISTED ENTRY</span>
-            <div><strong>简历上传后自动建档</strong><p>原型演示中，Notion AI 解析单份简历并写入候选人库，默认进入“笔试”阶段，同时生成下一步动作与时间，并整理简历要点和待补字段。当前证明的是完整交互闭环，不代表已经验证批量解析准确率或规模化成本。</p></div>
-          </div>
+          <div class="prototype-note"><span>AI ASSISTED ENTRY</span><div><strong>简历上传后自动建档</strong><p>上传简历后，Notion AI 自动提取候选人信息并写入候选人库，整理简历要点与待补字段；候选人默认进入“笔试”阶段，系统再依据流程阶段与内在关联关系自动生成下一步动作和时间。</p></div></div>
         </section>
 
         <section id="workflow">
@@ -114,11 +111,11 @@
           <h2>核心流程</h2>
           <ol class="flow-list">
             <li><div><b>候选人进入系统</b><span>手动建档或上传简历由 AI 辅助提取，记录岗位、部门、负责人、联系方式、简历要点与待补字段。</span></div></li>
-            <li><div><b>HR 设定下一步</b><span>根据当前流程节点写入下一步动作与时间，系统据此生成执行视图。</span></div></li>
+            <li><div><b>系统自动生成下一步</b><span>流程阶段、反馈关系和操作按钮相互关联；候选人通过后，系统自动更新下一步动作、时间与对应执行视图，无需 HR 重复填写。</span></div></li>
             <li><div><b>面试或评估发生</b><span>候选人进入笔试、群面、复试或终面，并在日历中形成排期。</span></div></li>
             <li><div><b>发起部门反馈</b><span>创建与候选人关联的反馈记录，用人部门只需填写结论、要点与可用时间。</span></div></li>
             <li><div><b>反馈回到候选人</b><span>通过关系和汇总字段，让 HR 在候选人卡片上直接看到最新结论。</span></div></li>
-            <li><div><b>推进或结束</b><span>通过按钮进入下一轮；未通过则进入淘汰，终面通过后进入 Offer。</span></div></li>
+            <li><div><b>自动推进或结束</b><span>点击通过或未通过后，系统依据关联规则同步更新流程阶段、下一步动作与时间；未通过进入淘汰，终面通过后进入 Offer。</span></div></li>
           </ol>
         </section>
 
@@ -153,7 +150,7 @@
           <div class="decision-grid">
             <div class="info-card"><span>DECISION 01</span><h3>视图不是新数据</h3><p>今日待办、异常、日历和看板都基于同一候选人库，避免复制多份名单造成状态漂移。</p></div>
             <div class="info-card"><span>DECISION 02</span><h3>按角色控制复杂度</h3><p>HR 看到推进全景；部门只处理分配给自己的反馈记录，降低填写成本。</p></div>
-            <div class="info-card"><span>DECISION 03</span><h3>下一步必须带时间</h3><p>只有动作没有时间仍然无法形成可靠待办，因此流程状态与下一步时间同时维护。</p></div>
+            <div class="info-card"><span>DECISION 03</span><h3>下一步自动联动</h3><p>候选人通过后，流程阶段、下一步动作与时间按照关联规则同步更新，HR 无需在每个节点重复维护。</p></div>
             <div class="info-card"><span>DECISION 04</span><h3>异常显式化</h3><p>把重复、缺失、超时和撞期从隐性风险变成一个可以集中清理的工作队列。</p></div>
           </div>
         </section>
