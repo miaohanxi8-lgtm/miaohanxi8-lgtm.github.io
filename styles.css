@@ -57,6 +57,53 @@ h1,h2,h3,p{margin-top:0}h1{font-size:clamp(46px,7vw,92px);line-height:1.04;lette
   .shell{width:min(100% - 28px,1180px)}.site-header{height:66px;padding:0 14px}.brand span{display:none}.nav-cta{padding:8px 12px}.hero{padding-top:56px}h1{font-size:43px}.hero-copy{font-size:16px}.hero-actions{display:grid;margin-bottom:52px}.capability-strip{grid-template-columns:1fr}.capability-strip>div{border-right:0;border-bottom:1px solid var(--line)!important}.project-grid{grid-template-columns:1fr}.featured-card{padding:20px}.project-copy h3{font-size:28px}.preview-grid{grid-template-columns:82px 1fr}.principles>div{grid-template-columns:35px 1fr}.principles p{grid-column:2}.case-summary>p{font-size:17px}.meta-list{margin-top:28px}.case-actions{display:grid}.case-actions .button{text-align:center}.case-cta-actions{display:grid}.case-cta-actions a{text-align:center}.architecture{padding:20px}.case-content h2{font-size:30px}.prototype-note{grid-template-columns:1fr;gap:8px}.screen-card figcaption{padding:16px}
 }
 
+/* Full-lifecycle autumn recruitment case */
+.case-content{min-width:0}
+.goal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.goal-grid .info-card{min-height:208px}
+.lifecycle-map{display:grid;grid-template-columns:repeat(15,auto);align-items:stretch;margin:28px 0;overflow-x:auto;padding-bottom:8px}
+.lifecycle-map>div{min-width:130px;background:var(--card);border:1px solid var(--line);padding:17px}
+.lifecycle-map>i{display:grid;place-items:center;padding:0 8px;color:var(--green);font-style:normal;font-size:20px}
+.lifecycle-map span,.track-panel>span,.review-flow span,.knowledge-assets span,.daily-inputs span{font-size:10px;letter-spacing:.11em;color:var(--green);font-weight:700}
+.lifecycle-map b{display:block;margin:8px 0 3px}.lifecycle-map p{margin:0;font-size:11px;color:var(--muted)}
+.two-track{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.track-panel{border:1px solid var(--line);background:var(--card);padding:28px}
+.track-panel h3{font-size:24px;margin:9px 0 16px}.track-panel ul{padding-left:18px;margin:0}.track-panel li{margin:9px 0;color:var(--muted);font-size:14px}
+.track-panel.accent-panel{background:var(--green);color:white;border-color:var(--green)}
+.accent-panel>span{color:var(--lime)}.accent-panel li{color:#d8e6dc}
+.action-example{display:grid;grid-template-columns:1fr 38px 1fr 38px 1fr;align-items:center;background:var(--ink);color:white;padding:20px;margin-top:14px}
+.action-example div{padding:10px}.action-example small{display:block;color:var(--lime);font-size:9px;letter-spacing:.11em}.action-example b{display:block;font-size:13px;margin-top:6px}.action-example i{text-align:center;color:var(--lime);font-style:normal}
+.review-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.review-flow>div{border-top:3px solid var(--green);background:var(--card);padding:20px}
+.review-flow b{display:block;font-size:17px;margin:7px 0}.review-flow p{font-size:13px;color:var(--muted);margin:0}
+.knowledge-assets{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+.knowledge-assets>div{background:var(--card);border:1px solid var(--line);padding:20px}
+.knowledge-assets h3{margin:8px 0}.knowledge-assets p{font-size:12px;color:var(--muted);margin:0}
+.answer-chain{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#e4efd0;border-left:4px solid var(--green);padding:20px;margin-top:14px}
+.answer-chain span{background:var(--card);border:1px solid #becdae;padding:7px 10px;font-size:12px}.answer-chain i{font-style:normal;color:var(--green)}.answer-chain strong{font-size:15px}
+.capability-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.capability-node{border:1px solid var(--line);padding:24px;background:var(--card);position:relative;overflow:hidden}
+.capability-node:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#a5aaa6}
+.capability-node.mastered:before{background:var(--lime)}.capability-node.progressing:before{background:#e0b752}
+.capability-node span{font-size:10px;color:var(--muted)}.capability-node b{display:block;font-size:19px;margin:7px 0}.capability-node p{font-size:13px;color:var(--muted);margin:0}
+.daily-inputs{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:26px 0 14px}
+.daily-inputs>div{border:1px solid var(--line);background:var(--card);padding:17px}
+.daily-inputs b{display:block;margin:7px 0;font-size:15px}.daily-inputs p{margin:0;color:var(--muted);font-size:11px}
+.feedback-loop{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr;align-items:center;background:var(--green);color:white;padding:22px}
+.feedback-loop>div{padding:10px}.feedback-loop small{display:block;color:var(--lime);font-size:9px;letter-spacing:.11em}.feedback-loop b{font-size:13px}.feedback-loop i{font-style:normal;text-align:center;color:var(--lime)}
+.micro-note{margin-top:14px;border-left:2px solid var(--lime);padding-left:12px;color:var(--muted);font-size:13px}
+@media(max-width:850px){
+  .goal-grid,.two-track,.review-flow,.capability-board{grid-template-columns:1fr}
+  .knowledge-assets{grid-template-columns:1fr 1fr}
+  .daily-inputs{grid-template-columns:1fr 1fr}
+  .action-example,.feedback-loop{grid-template-columns:1fr}.action-example i,.feedback-loop i{transform:rotate(90deg)}
+}
+@media(max-width:520px){
+  .knowledge-assets,.daily-inputs{grid-template-columns:1fr}
+  .goal-grid .info-card{min-height:0}
+  .track-panel{padding:21px}
+}
+
 
 /* Autumn recruitment system case */
 .skill-architecture{display:grid;gap:12px;background:var(--ink);padding:30px;margin-top:28px;color:white}
@@ -97,3 +144,4 @@ h1,h2,h3,p{margin-top:0}h1{font-size:clamp(46px,7vw,92px);line-height:1.04;lette
   .skill-architecture{padding:16px}.skill-metrics{grid-template-columns:1fr}.skill-metrics div{border-right:0;border-bottom:1px solid var(--line)}.skill-metrics div:last-child{border-bottom:0}
   .code-proof{padding:20px}.file-tree{font-size:10px}
 }
+

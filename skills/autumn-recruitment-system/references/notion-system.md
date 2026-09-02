@@ -16,11 +16,13 @@
 - 早报：collection://daily-report-data-source-id
 - Q&A：collection://qa-data-source-id
 - 原始问题：collection://raw-questions-data-source-id
-- 经历素材：collection://experience-evidence-data-source-id
+- 经历素材：collection://experience-assets-data-source-id
 - 简历版本：collection://resume-versions-data-source-id
 - 能力图谱：collection://capability-map-data-source-id
-- 能力练习：collection://capability-practice-data-source-id
-- 专注记录：collection://focus-log-data-source-id
+- 能力练习：collection://practice-records-data-source-id
+- 专注记录：collection://focus-records-data-source-id
+- 日记 / 每日复盘：collection://journal-data-source-id
+- 情绪打卡：collection://mood-checkin-data-source-id
 
 ## 自动化读取视图
 
@@ -29,7 +31,9 @@
 - 事业任务完整索引：view://tasks-full-index-view-id
 - 早报完整索引：view://daily-report-full-index-view-id
 - 能力图谱完整索引：view://capability-map-full-index-view-id
-- 专注历史索引：view://focus-history-index-view-id
+- 专注历史索引：view://focus-history-view-id
+- 我的日记：view://journal-view-id
+- 情绪打卡：view://mood-checkin-view-id
 
 这些视图位于数据库内部，不新增到 FLO.W 首页。使用 `query_data_sources` 的 view mode 读取，避免消耗 SQL 精确查询额度。
 
@@ -54,6 +58,12 @@
 11. 任务库当前行动字段的精确名称是“下一步做什么？”。写入笔试、测评、AI 测评或真人面试链路任务时，使用 Markdown 可点击链接，并优先把一键进入的入口放在开头；不能只把链接留在页面正文。
 12. “下一步做什么？”应是一张简短执行卡：具体动作、首选入口、截止或开始时间，以及邮件明确提供且执行需要的平台、预计时长、剩余次数、会议号/访问码、地点、联系人、材料或设备要求。没有的信息不猜；邮箱授权码、账号密码、验证码等敏感凭据不得写入。
 
+## 晚间自动化：复盘与明日早报
+
+推荐每天 23:00 运行日常自动化：先读取当天日记和情绪打卡，并在当天日记页补充或更新“秋招每日复盘”区块，再生成目标日期为明天的早报。每日复盘写入复盘中心的日记数据库；早报写入早报数据库。两者不合并成同一页。
+
+晚间生成的早报日期表示计划执行日期，不表示生成日期。例如 2026-09-02 23:00 自动化生成 `秋招邮件早报｜2026-09-03`，并在其中安排 2026-09-03 的“今日行动”。若用户白天手动要求当天计划，则仍生成当天日期的早报。
+
 ## 每日早报：行动与增量
 
 每日读取上一条状态为“已生成”的早报、活跃岗位、今日与未来 7 天任务、真实/模拟面试、未确认项和能力图谱，按以下四段输出：
@@ -64,6 +74,8 @@
 - 待补全与需确认：会影响执行或去重的信息缺口。
 
 同一事实只出现一次。今日行动顶部写计划总时长，每个时间块写优先级、预计用时、动作、完成标准和链接；固定日程计入总量，不虚构具体开始时间。每日能力提醒只选能力图谱中有证据的 1 个主缺口，必要时最多 2 个，并嵌入对应工作块。建议任务默认只读，不自动批量创建学习任务；但用户已明确授权每天创建或复用恰好一条模拟面试待办，不得提前批量生成。
+
+晚间自动化生成明日早报时，读取当天每日复盘的“明天调整”，把计划与实际偏差、未完成关键任务和有效节奏反馈到明天的时间块；早报只写调整后的行动安排，不复制每日复盘全文。
 
 ## 历史耗时校准
 

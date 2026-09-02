@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from email.message import EmailMessage
 from pathlib import Path
+from unittest import mock
 
 
 SCRIPTS_DIR = Path(__file__).resolve().parents[1]
@@ -111,6 +112,21 @@ class RecruitmentRulesTests(unittest.TestCase):
 
 
 class MailStorageTests(unittest.TestCase):
+    def test_default_data_dir_is_stable_when_local_app_data_is_virtualized(self) -> None:
+        with mock.patch.dict(
+            mail.os.environ,
+            {
+                "USERPROFILE": "C:/Users/example",
+                "LOCALAPPDATA": "D:/virtualized/LocalCache/Local",
+                "AUTUMN_RECRUITMENT_MAIL_DATA_DIR": "",
+            },
+            clear=False,
+        ):
+            self.assertEqual(
+                mail._default_data_dir(),
+                Path("C:/Users/example/AppData/Local/Codex/autumn-recruitment-system/qq_job_mail"),
+            )
+
     def _message(self, body: str) -> bytes:
         message = EmailMessage()
         message["Subject"] = "通知"

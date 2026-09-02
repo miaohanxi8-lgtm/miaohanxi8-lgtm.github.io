@@ -35,8 +35,8 @@ def _default_data_dir() -> Path:
     configured = os.environ.get("AUTUMN_RECRUITMENT_MAIL_DATA_DIR", "").strip()
     if configured:
         return Path(configured).expanduser()
-    local_app_data = os.environ.get("LOCALAPPDATA", "").strip()
-    base = Path(local_app_data) if local_app_data else Path.home() / "AppData" / "Local"
+    user_profile = os.environ.get("USERPROFILE", "").strip()
+    base = Path(user_profile) / "AppData" / "Local" if user_profile else Path.home() / "AppData" / "Local"
     return base / "Codex" / "autumn-recruitment-system" / "qq_job_mail"
 
 
@@ -366,7 +366,7 @@ def main() -> int:
         "--data-dir",
         type=Path,
         default=None,
-        help="运行数据目录；默认使用 AUTUMN_RECRUITMENT_MAIL_DATA_DIR 或本机应用数据目录。",
+        help="运行数据目录；默认使用 AUTUMN_RECRUITMENT_MAIL_DATA_DIR 或当前用户配置目录。",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
     fetch_parser = subparsers.add_parser("fetch")
