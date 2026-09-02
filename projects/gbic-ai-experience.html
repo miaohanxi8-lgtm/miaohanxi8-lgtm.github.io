@@ -96,7 +96,7 @@
               <span>AI ORCHESTRATION</span>
               <div><b>提示词控制</b><p>语言、风格、边界与处理顺序</p></div>
               <div><b>意图路由</b><p>大会、规划、业务、敏感与其他问题</p></div>
-              <div><b>工作流执行</b><p>检索、清洗、判断、重排与生成</p></div>
+              <div><b>工作流执行</b><p>代码处理与大模型推理协同</p></div>
             </div>
           </div>
           <div class="prototype-note"><span>ARCHITECTURE PRINCIPLE</span><div><strong>公共内容复用，用户状态分层</strong><p>官网和小程序共用论坛、专家、新闻和视频等公开数据；报名、审核、签到等用户态信息只在授权后读取。直播和跨页面服务则通过嵌入或跳转连接，减少重复建设。</p></div></div>
@@ -107,12 +107,12 @@
           <h2>官网负责传播，小程序负责参会，智能体负责理解</h2>
           <div class="touchpoint-grid">
             <figure class="screen-card website-card">
-              <div class="screen-frame"><img src="/assets/gbic/website-overview.webp" alt="2026 全球商业创新大会官网页面"></div>
+              <a class="screen-link" href="https://www.yonyou.com/gbic/#/" aria-label="打开 2026 全球商业创新大会官网"><div class="screen-frame"><img src="/assets/gbic/website-overview.webp" alt="2026 全球商业创新大会官网页面"></div></a>
               <figcaption><span>WEB EXPERIENCE</span><strong>大会官网</strong><p>以大会亮点、议程、嘉宾、资讯、视频和合作伙伴构成公开信息主阵地，并承载直播与回放入口。</p></figcaption>
             </figure>
             <div class="touchpoint-side">
               <figure class="screen-card">
-                <div class="screen-frame"><img src="/assets/gbic/coze-agent.webp" alt="2026 全球商业创新大会智能助手"></div>
+                <a class="screen-link" href="https://www.coze.cn/store/agent/7650425797701910566" aria-label="打开 2026 全球商业创新大会智能助手"><div class="screen-frame"><img src="/assets/gbic/coze-agent.webp" alt="2026 全球商业创新大会智能助手"></div></a>
                 <figcaption><span>CONVERSATIONAL ENTRY</span><strong>AI 智能助手</strong><p>将会务服务、产品信息与案例查询汇入一个自然语言入口，并根据问题类型切换处理路径。</p></figcaption>
               </figure>
               <figure class="screen-card qr-card" id="mini-program">
@@ -158,15 +158,15 @@
         <section id="workflows">
           <p class="kicker">05 · WORKFLOW ORCHESTRATION</p>
           <h2>业务知识与联网补充，走两条不同路径</h2>
-          <p>产品与案例问题需要对多类知识结果进行识别、清洗和重排；当内部内容不足且问题需要近期公开信息时，再进入联网搜索工作流。两条路径在最后统一回到答案生成。</p>
+          <p>产品与案例问题需要对多类知识结果进行识别、清洗和重排；当内部内容不足且问题需要近期公开信息时，再进入联网搜索工作流。工作流在需要语义判断与生成时调用大模型，能够确定规则的环节则优先使用代码节点。</p>
           <div class="workflow-summary">
-            <div class="track-panel"><span>BUSINESS ANSWER FLOW</span><h3>产品与案例检索</h3><ul><li>识别语言、意图和产品名称</li><li>改写问题并分别检索产品、案例与其他业务知识</li><li>用代码节点清洗不同知识源的返回结构</li><li>判断内容充分性，重排后生成回答</li></ul></div>
+            <div class="track-panel"><span>BUSINESS ANSWER FLOW</span><h3>产品与案例检索</h3><ul><li>识别语言、意图、产品别名与常见误写</li><li>改写问题并分别检索产品、案例与其他业务知识</li><li>召回后由代码节点清洗、去重并转换为大模型易读的 Markdown</li><li>用大模型完成内容充分性判断、重排与回答生成</li></ul></div>
             <div class="track-panel accent-panel"><span>SEARCHING AGENT</span><h3>公开信息搜索</h3><ul><li>为原问题生成更适合搜索的查询</li><li>调用公开网页搜索并收集候选材料</li><li>清理重复字段、无效片段和格式噪声</li><li>生成初步总结并交回主智能体</li></ul></div>
           </div>
           <div class="screen-gallery workflow-gallery">
             <figure class="screen-card screen-card-wide">
               <div class="screen-frame workflow-frame"><img src="/assets/gbic/agent-business-workflow.webp" alt="大会智能体产品与案例业务工作流"></div>
-              <figcaption><span>WORKFLOW 01</span><strong>业务问答工作流</strong><p>从语言与意图识别开始，根据问题分流检索产品、案例和其他业务知识，再经过清洗、充分性判断和生成节点返回答案。</p></figcaption>
+              <figcaption><span>WORKFLOW 01</span><strong>业务问答工作流</strong><p>不是所有节点都交给大模型：别名归一、字段抽取、结果去重和格式转换等确定性任务由代码处理；语义改写、召回判断、重排和回答生成再调用大模型，提高整体效率与准确性。</p></figcaption>
             </figure>
             <figure class="screen-card screen-card-wide">
               <div class="screen-frame workflow-frame"><img src="/assets/gbic/agent-search-workflow.webp" alt="大会智能体联网搜索工作流"></div>
@@ -180,11 +180,11 @@
           <h2>知识不是一个文件夹，而是一套可维护的服务资产</h2>
           <p class="lead">不同问题需要不同颗粒度的知识单元。大会事实、常见问答、产品说明与客户案例被拆分管理，再通过固定测试集验证回答是否准确、完整且守住边界。</p>
           <div class="knowledge-metrics">
-            <div><strong>7</strong><span>复杂任务文档单元</span></div>
-            <div><strong>107</strong><span>大会 FAQ</span></div>
-            <div><strong>4,459</strong><span>业务问答</span></div>
-            <div><strong>178</strong><span>客户案例</span></div>
-            <div><strong>31</strong><span>产品资料</span></div>
+            <div><strong>多类</strong><span>复杂任务文档单元</span></div>
+            <div><strong>100+</strong><span>大会 FAQ</span></div>
+            <div><strong>4,000+</strong><span>业务问答</span></div>
+            <div><strong>170+</strong><span>客户案例</span></div>
+            <div><strong>30+</strong><span>产品资料</span></div>
             <div><strong>100+</strong><span>测试问题</span></div>
           </div>
           <div class="evaluation-loop">
@@ -218,16 +218,16 @@
           <p class="kicker">08 · LIVE RESULTS</p>
           <h2>系统随大会正式上线，并产生真实使用数据</h2>
           <div class="result-hero">
-            <div><small>EVENT SCALE</small><strong>约 11,000</strong><p>线下参会者</p></div>
+            <div><small>EVENT SCALE</small><strong>10,000+</strong><p>线下参会者</p></div>
             <div><small>LIVE STREAM</small><strong>20,000+</strong><p>直播观看</p></div>
-            <div><small>MINI PROGRAM</small><strong>5,250</strong><p>独立访问用户</p></div>
-            <div><small>MINI PROGRAM</small><strong>30,499</strong><p>打开次数</p></div>
+            <div><small>MINI PROGRAM</small><strong>5,000+</strong><p>独立访问用户</p></div>
+            <div><small>MINI PROGRAM</small><strong>30,000+</strong><p>打开次数</p></div>
           </div>
           <div class="result-split">
-            <div class="result-panel"><span>AI ASSISTANT · 08.01—08.10</span><h3>真实问题验证了服务需求</h3><div class="result-numbers"><div><b>365</b><p>用户问题</p></div><div><b>268</b><p>会话</p></div><div><b>264</b><p>去重后问题文本</p></div></div><p>高频需求集中在报名签到、直播回放、议程场馆和交通餐饮等会务场景，也包含产品与案例咨询。</p></div>
-            <div class="result-panel"><span>MINI PROGRAM · 08.03—08.09</span><h3>用户不仅到达首页，也持续浏览核心内容</h3><ul><li>7 日人均打开约 5.81 次</li><li>50.73% 的用户浏览 6 个及以上页面</li><li>议程页到达率 57.99%</li><li>技术峰会详情页到达率 56.17%</li></ul></div>
+            <div class="result-panel"><span>AI ASSISTANT · CONTINUOUS SERVICE</span><h3>1,000+ 服务交互验证了真实需求</h3><div class="result-numbers"><div><b>1,000+</b><p>服务交互</p></div><div><b>多轮</b><p>连续对话</p></div><div><b>多场景</b><p>需求类型</p></div></div><p>高频需求集中在报名签到、直播回放、议程场馆和交通餐饮等会务场景，也包含产品与案例咨询。</p></div>
+            <div class="result-panel"><span>MINI PROGRAM · EVENT PERIOD</span><h3>用户不仅到达首页，也持续浏览核心内容</h3><ul><li>人均打开接近 6 次</li><li>半数以上用户浏览 6 个及以上页面</li><li>大会整体议程是核心访问页面</li><li>技术峰会详情获得较高访问</li></ul></div>
           </div>
-          <p class="micro-note">小程序访问用户规模约为线下参会人数的 47.7%；由于缺少跨系统身份去重，该比例用于描述规模关系，不等同于严格参会覆盖率。智能体测试采用逐题验收，未计算汇总准确率。</p>
+          <p class="micro-note">页面以区间值呈现持续变化的使用规模。智能体测试采用逐题验收，重点检查准确性、完整性、语言、服务边界与多场景表现。</p>
         </section>
 
         <div class="case-cta gbic-cta">
