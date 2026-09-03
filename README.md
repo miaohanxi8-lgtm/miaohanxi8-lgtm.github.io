@@ -22,7 +22,6 @@ https://miaohanxi8-lgtm.github.io
 
 - [AI 产品简历](assets/resume/miao-hanxi-ai-product-resume.pdf)
 - [数据分析简历](assets/resume/miao-hanxi-data-analytics-resume.pdf)
-- Phone: 189 7510 6187
 - Email: 1752965527@qq.com
 
 ## Privacy and evidence
