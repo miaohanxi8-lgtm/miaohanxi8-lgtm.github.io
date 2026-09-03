@@ -18,6 +18,13 @@ https://miaohanxi8-lgtm.github.io
 - AI 产品：需求澄清、信息架构、状态与异常、AI 工作流、知识库、测试验收、跨团队上线。
 - 数据分析：数据采集、清洗、去重、关系建模、规则匹配、异常复核与结构化输出。
 
+## Resume and contact
+
+- [AI 产品简历](assets/resume/miao-hanxi-ai-product-resume.pdf)
+- [数据分析简历](assets/resume/miao-hanxi-data-analytics-resume.pdf)
+- Phone: 189 7510 6187
+- Email: 1752965527@qq.com
+
 ## Privacy and evidence
 
 This repository contains only portfolio-safe material. Real candidate data, credentials, internal company documents, private links, and unverified impact claims are excluded.
